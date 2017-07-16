@@ -14,12 +14,16 @@ public class SherlockAndAnagrams {
     	// iterate over each subString
     	while (size != s.length()) {
     		
-    		for (int i = 0; i + size < s.length() - size; i++) {
+    		
+    		for (int i = 0; i < s.length() - size; i++) {
     			String ss = s.substring(i,i+size);
-    			System.out.println(ss);
     			int[] ssFreq = getFreq(ss);
-    			for (int j = i + size; j+size < s.length(); j++) {
-    				if (isAnagram(ssFreq, s.substring(j, j+size))) {
+    			int[] oFreq = Arrays.copyOf(ssFreq, 26);
+    			for (int j = i; j + size < s.length(); j++) {
+        			oFreq[s.charAt(j) 		 - 'a']--;
+    				oFreq[s.charAt(j + size) - 'a']++;
+    				
+    				if (isAnagram(ssFreq, oFreq)) {
     					count++;
     				}
     			}
@@ -28,20 +32,16 @@ public class SherlockAndAnagrams {
     	}
     	
     	return count;
-    }
-    
-   // static int calcSkip()
-    
-    static boolean isAnagram(int[] a, String ss) {
-    	int[] o = getFreq(ss);
-    	for (int i = 0; i < 24; i++) {
+    }    
+    static boolean isAnagram(int[] a, int[] o) {
+    	for (int i = 0; i < 26; i++) {
     		if (a[i] != o[i]) return false;
     	}
     	return true;
     }
     
     static int[] getFreq(String ss) {
-    	int[] letterFreq = new int[24];
+    	int[] letterFreq = new int[26];
     	for (int i = 0; i < ss.length(); i++) {
     		letterFreq[ss.charAt(i) - 'a']++;
     	}
