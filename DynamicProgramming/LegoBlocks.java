@@ -8,6 +8,7 @@
  * 		bottom without cutting one or more lego blocks. "
  * 
  * 		-> Otherwords, each column contains 1 blocks that's wider than 1
+ * 		-> or, NO column can contain only blocks of width 1
  */
 public class LegoBlocks {
 
