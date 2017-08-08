@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /* Problem: https://www.hackerrank.com/challenges/pairs/problem
  *   
  *  Thoughts: 
@@ -15,7 +18,43 @@ public class Pairs {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		Scanner in = new Scanner(System.in);
+		int N = in.nextInt();
+		int K = in.nextInt();
+		in.nextLine();
+
+		Integer[] a = new Integer[N];
+		for (int i = 0; i < N; i++) {
+			a[i] = in.nextInt();
+		}
+
+		// We'll settle with quicksort for a quick and easy solution
+		Arrays.sort(a);
+
+		// pseudo-pointer indexes
+		int lp = 0;
+		int rp = 1;
+
+		int count = 0;
+
+		while (lp < a.length && rp < a.length) {
+			int diff = a[rp] - a[lp];
+
+			if (diff < K) {
+				rp++;
+			} else if (diff > K) {
+				lp++;
+				if (lp == rp)
+					rp++;
+			} else {
+				count++;
+				lp++;
+				rp++;
+			}
+		}
+
+		System.out.println(count);
+
 	}
 
 }
