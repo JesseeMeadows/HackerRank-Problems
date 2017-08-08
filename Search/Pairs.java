@@ -28,7 +28,8 @@ public class Pairs {
 			a[i] = in.nextInt();
 		}
 
-		// We'll settle with quicksort for a quick and easy solution
+		// We'll settle with quicksort for a quick and easy solution although
+		// radix sort would give us better results
 		Arrays.sort(a);
 
 		// pseudo-pointer indexes
