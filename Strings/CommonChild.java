@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-/* Problem: "Sherlock and Array"
-  * 	url: https://www.hackerrank.com/challenges/sherlock-and-array/problem
+/* Problem: "Common Child"
+  * 	url: https://www.hackerrank.com/challenges/common-child/problem
   * 	Thoughts: we can use a DP approach in that we recursively check 
   * 			  the max length score possible of 2 cases: if we were to
   * 			  include the character in the answer, and if we didn't;
