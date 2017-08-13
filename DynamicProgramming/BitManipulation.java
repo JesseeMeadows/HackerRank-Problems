@@ -104,7 +104,10 @@ public class BitManipulation {
 		 	
 		 	/* a factorial of 2 will obtain a single '1' bit, subtracting from 1 this number will
 		 	 * result in a '1's in all positions prior to the '1', so '&'ing the two will be zero
-		 	 */
+		 	 * 		example:			16	=	0010000
+		 	 * 				(16 - 1)	15  =   0001111
+		 	 * 						& result:   0000000
+		 	 */				
 		 	
 		 	// Modulo 2^n against m
 		 	int mod2ToN = m & (n - 1);
