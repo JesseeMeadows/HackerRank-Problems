@@ -16,6 +16,9 @@ import java.util.Scanner;
  * 						flip bit if number of 1-bits in previous k-bits is even
  * 				
  * 				truncate the last k-bits
+ * 
+ * 				Notes: for the first K-bits of the cyphertext, the pt bit is equal to ct[i]^ct[i-1]
+ * 					   thereafter, it would be same with the addition to xoring the i-k bit of the plaintext
 
  */
 public class Cipher {
